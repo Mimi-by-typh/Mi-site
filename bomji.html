@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бомжи для клана | Великодушные #VLKD</title>
+    <style>
+        :root {
+            --blood-red: #FF0000;
+            --dark-red: #8B0000;
+            --pure-black: #000000;
+            --coal: #1A1A1A;
+            --ash: #333333;
+            --bone: #F0F0F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--pure-black);
+            color: var(--bone);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--pure-black), var(--coal));
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--blood-red);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: var(--blood-red);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .clan-tag {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--bone);
+            letter-spacing: 3px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--coal);
+            padding: 1rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--dark-red);
+        }
+        
+        nav a {
+            color: var(--bone);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--blood-red);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+        
+        .bomji-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .bomji-card {
+            background-color: var(--coal);
+            border: 1px solid var(--dark-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .bomji-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .bomji-name {
+            color: var(--blood-red);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed var(--blood-red);
+            padding-bottom: 0.5rem;
+        }
+        
+        .bomji-info {
+            margin-bottom: 0.5rem;
+        }
+        
+        .bomji-info p {
+            margin-bottom: 0.8rem;
+        }
+        
+        .bomji-info strong {
+            color: var(--blood-red);
+        }
+        
+        footer {
+            background-color: var(--pure-black);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--dark-red);
+        }
+        
+        .telegram-link {
+            display: inline-block;
+            background-color: var(--dark-red);
+            color: var(--bone);
+            padding: 0.8rem 2rem;
+            margin: 1rem 0;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .telegram-link:hover {
+            background-color: var(--blood-red);
+            transform: scale(1.05);
+        }
+        
+        .clan-motto {
+            font-style: italic;
+            color: var(--blood-red);
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .clan-tag { font-size: 1.2rem; }
+            nav { gap: 0.8rem; }
+            .bomji-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>БОМЖИ ДЛЯ КЛАНА</h1>
+        <span class="clan-tag">Великодушные #VLKD</span>
+    </header>
+    
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="ystav.html">Устав</a>
+        <a href="chleny.html">Члены</a>
+        <a href="pravila.html">Правила</a>
+        <a href="#">Достижения</a>
+        <a href="archiv.html">Архив</a>
+        <a href="bomji.html" class="active">Бомжи для клана</a>
+    </nav>
+    
+    <div class="bomji-container">
+        <!-- Карточка 1 -->
+        <div class="bomji-card">
+            <h3 class="bomji-name">Alagona 
+Трупов
+Анархист 
+Проклятый 
+Крестоверный
+Хiмори 
+кайз</h3>
+            <div class="bomji-info">
+                <p><strong>Каста:</strong> Toxx</p>
+                <p><strong>Выебан:</strong> by Velikodyshnie</p>
+            </div>
+        </div>
+        
+        <!-- Карточка 2 -->
+        <div class="bomji-card">
+            <h3 class="bomji-name">фулл клан #XYZ 
+фулл клан #GLV
+фулл клан #всемогущие
+фулл клан #BOB</h3>
+            <div class="bomji-info">
+                <p><strong>Каста:</strong> Toxx</p>
+                <p><strong>Выебаны:</strong> by Velikodyshnie</p>
+            </div>
+        </div>
+        
+        <!-- Карточка 3 -->
+        <div class="bomji-card">
+            <h3 class="bomji-name">Ещё будут хуесосы</h3>
+            <div class="bomji-info">
+                <p><strong>Каста:</strong> скуф</p>
+                <p><strong>Выебан:</strong> За пиво</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="https://t.me/Belikodyshnui_orig_Home/1572" class="telegram-link">
+            Присоединиться в Telegram
+        </a>
+        <p class="clan-motto">"В единстве - наша сила, в чести - наше бессмертие"</p>
+        <p>© 2024-2025 Великодушные #VLKD</p>
+    </footer
+    <script href="script.js"</script>
+    <script href="1.js"></script>
+    <script href="load.js"></script>
+</body>
+</html>

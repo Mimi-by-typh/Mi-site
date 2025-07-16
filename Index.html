@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Великодушные #VLKD</title>
+    <style>
+        :root {
+            --blood-red: #FF0000;
+            --dark-red: #8B0000;
+            --pure-black: #000000;
+            --coal: #1A1A1A;
+            --ash: #333333;
+            --bone: #F0F0F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--pure-black);
+            color: var(--bone);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Анимация дождя */
+        #bloodRain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            animation: rainFade 3.5s ease-out forwards;
+        }
+
+        @keyframes rainFade {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+
+        /* Анимация появления элементов */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Анимация пламени */
+        @keyframes flame {
+            0%, 100% { box-shadow: 0 0 5px var(--blood-red); }
+            25% { box-shadow: 0 0 10px var(--blood-red), 0 0 20px #FF4500; }
+            50% { box-shadow: 0 0 15px #FF4500, 0 0 30px #FF8C00; }
+            75% { box-shadow: 0 0 10px #FF8C00, 0 0 20px var(--blood-red); }
+        }
+
+        header {
+            background: linear-gradient(to right, var(--pure-black), var(--coal));
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--blood-red);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 0.5s forwards;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: var(--blood-red);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 0.5rem;
+        }
+        
+        .clan-tag {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--bone);
+            letter-spacing: 3px;
+            margin-top: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--coal);
+            padding: 1rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--dark-red);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+        }
+        
+        nav a {
+            color: var(--bone);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--blood-red);
+            border-radius: 3px;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        nav a:nth-child(1) { animation-delay: 1.7s; }
+        nav a:nth-child(2) { animation-delay: 1.8s; }
+        nav a:nth-child(3) { animation-delay: 1.9s; }
+        nav a:nth-child(4) { animation-delay: 2.0s; }
+        nav a:nth-child(5) { animation-delay: 2.1s; }
+        nav a:nth-child(6) { animation-delay: 2.2s; }
+        nav a:nth-child(7) { animation-delay: 2.3s; }
+        nav a:nth-child(8) { animation-delay: 2.4s; }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .clan-card {
+            background-color: var(--coal);
+            border: 1px solid var(--dark-red);
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .clan-card:nth-child(1) { animation-delay: 2.5s; }
+        .clan-card:nth-child(2) { animation-delay: 2.7s; }
+        .clan-card:nth-child(3) { animation-delay: 2.9s; }
+        
+        .clan-card::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 7px;
+            z-index: -1;
+            animation: flame 2s infinite alternate;
+        }
+        
+        .clan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+        }
+        
+        .clan-card h2 {
+            color: var(--blood-red);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--blood-red);
+        }
+        
+        .clan-card ul {
+            padding-left: 1.2rem;
+        }
+        
+        .clan-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .clan-card li::before {
+            content: "»";
+            color: var(--blood-red);
+            position: absolute;
+            left: -1rem;
+        }
+        
+        footer {
+            background-color: var(--pure-black);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--dark-red);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 3.2s forwards;
+        }
+        
+        .telegram-link {
+            display: inline-block;
+            background-color: var(--dark-red);
+            color: var(--bone);
+            padding: 0.8rem 2rem;
+            margin: 1rem 0;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .telegram-link:hover {
+            background-color: var(--blood-red);
+            transform: scale(1.05);
+        }
+        
+        .clan-motto {
+            font-style: italic;
+            color: var(--blood-red);
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .clan-tag { font-size: 1.2rem; }
+            nav { gap: 0.8rem; }
+            .container { padding: 0.5rem; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Анимация дождя -->
+    <canvas id="bloodRain"></canvas>
+
+    <header>
+        <h1>ВЕЛИКОДУШНЫЕ</h1>
+        <span class="clan-tag">#VLKD</span>
+    </header>
+    
+    <nav>
+        <a href="index.html" class="active">Главная🏠</a>
+        <a href="ystav.html">Устав🗽</a>
+        <a href="chleny.html">Члены👤</a>
+        <a href="pravila.html">Правила🗒</a>
+        <a href="win.html">Достижения🏆</a>
+      <a href="rate.html">Рейтинг📈</a>
+        <a href="archiv.html">Архив🗂</a>
+        <a href="bomji.html">Бомжи для клана🤮</a>
+    </nav>
+    
+    <div class="container">
+        <div class="clan-card">
+            <h2>Кодекс Чести</h2>
+            <ul>
+                <li>Верность клану превыше всего</li>
+                <li>Честь и достоинство в каждом поступке</li>
+                <li>Сила в единстве</li>
+                <li>Помощь младшим</li>
+                <li>Уважение к противнику</li>
+            </ul>
+        </div>
+        
+        <div class="clan-card">
+            <h2>Наши Принципы</h2>
+            <ul>
+                <li>Совместные тренировки</li>
+                <li>Обмен ресурсами</li>
+                <li>Стратегическое планирование</li>
+                <li>Поддержка в бою</li>
+                <li>Развитие сообщества</li>
+            </ul>
+        </div>
+        
+        <div class="clan-card">
+            <h2>Достижения</h2>
+            <ul>
+                <li>Топ-10 в рейтинге кланов</li>
+                <li>50+ успешных рейдов</li>
+                <li>100+ обученных бойцов</li>
+                <li>Создание альянса</li>
+                <li>Легендарные сражения</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="https://t.me/Belikodyshnui_orig_Home/1572" class="telegram-link">
+            Присоединиться в Telegram
+        </a>
+        <p class="clan-motto">"В единстве - наша сила, в чести - наше бессмертие"</p>
+        <p>© 2024-2025 Великодушные #VLKD</p>
+    </footer>
+
+    <script>
+        // Анимация дождя
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('bloodRain');
+            const ctx = canvas.getContext('2d');
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            
+            const drops = [];
+            const dropCount = 150;
+            
+            for (let i = 0; i < dropCount; i++) {
+                drops.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * -canvas.height,
+                    length: 20+ Math.random() * 20,
+                    speed: 2 + Math.random() * 5,
+                    opacity: 0.1 + Math.random() * 0.7
+                });
+            }
+            
+            function drawRain() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const drop = drops[i];
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(drop.x, drop.y);
+                    ctx.lineTo(drop.x, drop.y + drop.length);
+                    ctx.strokeStyle = `rgba(139, 0, 0, ${drop.opacity})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    
+                    drop.y += drop.speed;
+                    
+                    if (drop.y > canvas.height) {
+                        drop.y = Math.random() * -100;
+                        drop.x = Math.random() * canvas.width;
+                    }
+                }
+                
+                requestAnimationFrame(drawRain);
+            }
+            
+            setTimeout(() => {
+                canvas.style.opacity = '0';
+                setTimeout(() => {
+                    canvas.style.display = 'none';
+                }, 1000);
+            }, 3500);
+            
+            drawRain();
+        });
+    </script>
+  <script src="script.js"></script>
+  <script src=""></script>
+  <script src="load.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Члены клана | Великодушные #VLKD</title>
+    <style>
+        :root {
+            --blood-red: #FF0000;
+            --dark-red: #8B0000;
+            --pure-black: #000000;
+            --coal: #1A1A1A;
+            --ash: #333333;
+            --bone: #F0F0F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--pure-black);
+            color: var(--bone);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--pure-black), var(--coal));
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--blood-red);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: var(--blood-red);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .clan-tag {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--bone);
+            letter-spacing: 3px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--coal);
+            padding: 1rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--dark-red);
+        }
+        
+        nav a {
+            color: var(--bone);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--blood-red);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+        
+        .members-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .member-card {
+            background-color: var(--coal);
+            border: 1px solid var(--dark-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        }
+        
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--ash);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 2px solid var(--blood-red);
+        }
+        
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-name {
+            color: var(--blood-red);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-rank {
+            color: var(--bone);
+            background-color: var(--dark-red);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .member-info {
+            color: var(--bone);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .member-contacts {
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .member-contacts a {
+            color: var(--bone);
+            background-color: var(--ash);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .member-contacts a:hover {
+            background-color: var(--blood-red);
+            transform: scale(1.1);
+        }
+        
+        footer {
+            background-color: var(--pure-black);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--dark-red);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .clan-tag { font-size: 1.2rem; }
+            nav { gap: 0.8rem; }
+            .members-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ЧЛЕНЫ КЛАНА</h1>
+        <span class="clan-tag">Великодушные #VLKD</span>
+    </header>
+    
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="ystav.html">Устав</a>
+        <a href="chleny.html" class="active">Члены</a>
+        <a href="pravila.html">Правила</a>
+        <a href="#">Достижения</a>
+        <a href="archiv.html">Архив</a>
+        <a href="bomji.html">Бомжи для клана</a>
+    </nav>
+    
+    <div class="members-container">
+        <!-- Карточка члена 1 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <a href="https://imgfoto.host/i/xvx13e"><img src="https://a.imgfoto.host/2025/07/16/1000032170.webp" alt="1000032170.webp" border="0" class="archive-image" /></a>
+            </div>
+            <h3 class="member-name">Тёмка Великодушный</h3>
+            <span class="member-rank">Глава Клана</span>
+            <p class="member-info">Основатель клана Великодушные#VLKD, самый крутой любитель котов и лидер, мы его любим!</p>
+            <div class="member-contacts">
+                <a href="@Belikodyshnui" title="Telegram">📱</a>
+              
+            </div>
+        </div>
+        
+        <!-- Карточка члена 2 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <a href="https://imgfoto.host/i/xwCcz5"><img src="https://a.imgfoto.host/2025/07/16/1000032266.md.jpeg" alt="1000032266.jpeg" border="0" /></a>
+            </div>
+            <h3 class="member-name">Никотин</h3>
+            <span class="member-rank">Зам Клана</span>
+            <p class="member-info"></p>
+            <div class="member-contacts">
+                <a href="http://t.me/oxeanc" title="Telegram">📱</a>
+                
+            </div>
+        </div>
+        
+        <!-- Карточка члена 3 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+        
+        <!-- Карточка члена 4 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+        
+        <!-- Карточка члена 5 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+        
+        <!-- Карточка члена 6 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+        
+        <!-- Карточка члена 7 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+        
+        <!-- Карточка члена 8 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+        
+        <!-- Карточка члена 9 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+        
+        <!-- Карточка члена 10 -->
+        <div class="member-card">
+            <div class="member-avatar">
+                <img src="https://via.placeholder.com/100" alt="Аватар">
+            </div>
+            <h3 class="member-name">Имя Фамилия</h3>
+            <span class="member-rank">Ранг</span>
+            <p class="member-info">Краткая информация о члене клана. Здесь можно указать достижения, роль в клане и другие детали.</p>
+            <div class="member-contacts">
+                <a href="#" title="Telegram">📱</a>
+                <a href="#" title="Steam">🎮</a>
+                <a href="#" title="Discord">💬</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="https://t.me/Belikodyshnui_orig_Home/1572" class="telegram-link">
+            Присоединиться в Telegram
+        </a>
+        <p class="clan-motto">"В единстве - наша сила, в чести - наше бессмертие"</p>
+        <p>© 2024-2025 Великодушные #VLKD</p>
+    </footer>
+    
+   <script src="script.js"></script>
+  <script src=""></script>
+   <script src="load.js"></script>
+</body>
+</html>

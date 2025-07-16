@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила | Великодушные #VLKD</title>
+    <style>
+        :root {
+            --blood-red: #FF0000;
+            --dark-red: #8B0000;
+            --pure-black: #000000;
+            --coal: #1A1A1A;
+            --ash: #333333;
+            --bone: #F0F0F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--pure-black);
+            color: var(--bone);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* АНИМАЦИЯ ПОЯВЛЕНИЯ */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* АНИМАЦИЯ ТЕКСТА */
+        @keyframes textAppear {
+            from { opacity: 0; letter-spacing: 5px; }
+            to { opacity: 1; letter-spacing: normal; }
+        }
+
+        /* АНИМАЦИЯ ПУЛЬСАЦИИ */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        header {
+            background: linear-gradient(to right, var(--pure-black), var(--coal));
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--blood-red);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: var(--blood-red);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .clan-tag {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--bone);
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--coal);
+            padding: 1rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--dark-red);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+        }
+        
+        nav a {
+            color: var(--bone);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--blood-red);
+            border-radius: 3px;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* Анимация для каждой ссылки с задержкой */
+        nav a:nth-child(1) { animation-delay: 1.2s; }
+        nav a:nth-child(2) { animation-delay: 1.4s; }
+        nav a:nth-child(3) { animation-delay: 1.6s; }
+        nav a:nth-child(4) { animation-delay: 1.8s; }
+        nav a:nth-child(5) { animation-delay: 2.0s; }
+        nav a:nth-child(6) { animation-delay: 2.2s; }
+        nav a:nth-child(7) { animation-delay: 2.4s; }
+        
+        nav a:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+        
+        nav a.active {
+            background-color: var(--dark-red);
+            animation: pulse 2s infinite 2.4s;
+        }
+        
+        .statute-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--coal);
+            border: 1px solid var(--dark-red);
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease-out 2.6s forwards;
+        }
+        
+        .statute-content {
+            white-space: pre-line;
+            line-height: 1.8;
+            padding: 1rem;
+            opacity: 0;
+            animation: textAppear 1.5s ease-out 3.0s forwards;
+        }
+        
+        h2 {
+            color: var(--blood-red);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 2.8s forwards;
+        }
+        
+        footer {
+            background-color: var(--pure-black);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--dark-red);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 3.4s forwards;
+        }
+        
+        .telegram-link {
+            display: inline-block;
+            background-color: var(--dark-red);
+            color: var(--bone);
+            padding: 0.8rem 2rem;
+            margin: 1rem 0;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .telegram-link:hover {
+            background-color: var(--blood-red);
+            transform: scale(1.05);
+        }
+        
+        .clan-motto {
+            font-style: italic;
+            color: var(--blood-red);
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .clan-tag { font-size: 1.2rem; }
+            nav { gap: 0.8rem; }
+            .statute-container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ПРАВИЛА #VLKD</h1>
+        <span class="clan-tag">Великодушные #VLKD</span>
+    </header>
+    
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="ystav.html">Устав</a>
+        <a href="chleny.html">Члены</a>
+        <a href="pravila.html">Правила</a>
+        <a href="#">Достижения</a>
+        <a href="archiv.html">Архив</a>
+        <a href="bomji.html">Бомжи для клана</a>
+    </nav>
+    
+    <div class="statute-container">
+        <h2>ОФИЦИАЛЬНЫЕ ПРАВИЛА #VLKD</h2>
+        <div class="statute-content">
+(ПРАВИЛА НА ВСТУПЛЕНИЕ)
+
+1. Оскорбление сокланов даже если в шутку наказание не сработает если обе стороны скажут что это шутка (наказание Варн)
+2. Пиздить клан который с нами в союзе (наказание Варн)
+3. Шпионить за кланом (наказание кик без права на вступление повторно)
+4. Выход без причины из клана (Клан забирает ник и ставит на ебало табличку о том что это сын бляди не общайтесь)
+5. Не послушание (наказание Варн)
+6. Калл Без причины (наказание Варн)
+7. Быть мирным (МОМЕНТАЛЬНЫЙ КИК С КЛАНА)
+8. Тролиться в войсе (кф) клана можно
+9. Не актив 4-5 (наказание кик)
+10. Дефать своих сокланов (За это будет поощерение)
+
+(ПРАВИЛА СОЮЗА) 
+ 
+1. Следить за своими сокланами чтобы не было стычек между союзным кланом 
+2. Не шпионить (наказание Разрыв союза и моментальный рейд на клан)
+3. Дефать если что-то случилось (Например/ Рейд, слив людей, шпион, предательство.) 
+4. при любой угрозе любой стороне союзных кланов всегда помочь.
+        </div>
+    </div>
+    
+    <footer>
+        <a href="https://t.me/Belikodyshnui_orig_Home/1572" class="telegram-link">
+            Присоединиться в Telegram
+        </a>
+        <p class="clan-motto">"В единстве - наша сила, в чести - наше бессмертие"</p>
+        <p>© 2024-2025 Великодушные #VLKD</p>
+    </footer>
+  </script>
+  <script src="script.js"></script>
+  <script src=""></script>
+  <script src="load.js">
+</body>
+</html>

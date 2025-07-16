@@ -1,0 +1,47 @@
+/* Анимации появления */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Задержки для анимаций */
+header h1, .clan-tag {
+    animation: fade-in 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.clan-tag {
+    animation-delay: 0.5s;
+}
+
+nav {
+    animation: fade-in 1s ease-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.clan-card {
+    animation: slide-up 1s ease-out forwards;
+    opacity: 0;
+}
+
+.clan-card:nth-child(1) { animation-delay: 1.5s; }
+.clan-card:nth-child(2) { animation-delay: 2s; }
+.clan-card:nth-child(3) { animation-delay: 2.5s; }
+
+footer {
+    animation: fade-in 1s ease-out forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
